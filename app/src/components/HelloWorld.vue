@@ -27,14 +27,31 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <div><input v-model="txt" /></div>
+    <div>{{ txt }}</div>
+    <div v-for="item in list"  :key="item.id">
+      <div>{{ item.id }}-{{ item.name }}</div>
+    </div>
+    {{xx}}
   </div>
 </template>
 
 <script>
+import { ref,reactive } from 'vue'
 export default {
-  name: 'HelloWorld',
+  name: 'hello-world',
   props: {
     msg: String
+  },
+  setup(){
+    const txt = ref('')
+    const list = reactive([{id:1,name:'項目1'},{id:2,name:'項目2'},{id:3,name:'項目3'}])
+    const xx = null ?? 5
+    return {
+      txt,
+      list,
+      xx
+    }
   }
 }
 </script>
