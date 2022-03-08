@@ -32,28 +32,28 @@
     <div v-for="item in list"  :key="item.id">
       <div>{{ item.id }}-{{ item.name }}</div>
     </div>
+    {{xx}}
   </div>
 </template>
 
 <script>
-import {defineComponent ,ref,reactive } from 'vue'
-export default defineComponent({
+import { ref,reactive } from 'vue'
+export default {
   name: 'hello-world',
   props: {
     msg: String
   },
-  components:{
-
-  },
   setup(){
     const txt = ref('')
     const list = reactive([{id:1,name:'項目1'},{id:2,name:'項目2'},{id:3,name:'項目3'}])
+    const xx = null ?? 5
     return {
       txt,
-      list
+      list,
+      xx
     }
   }
-})
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
