@@ -7,6 +7,9 @@
     <li>
       <router-link to="/about/30">About</router-link>
     </li>
+    <li>
+      <router-link to="/providerInjectExample">ProviderInjectExample</router-link>
+    </li>
   </ul>
 </template>
 <script>
