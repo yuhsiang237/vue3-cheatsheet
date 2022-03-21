@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav></Nav>
+    <Nav title="標題"></Nav>
     <router-view />
     <Footer></Footer>
   </div>
