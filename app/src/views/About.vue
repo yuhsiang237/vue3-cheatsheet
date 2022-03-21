@@ -1,9 +1,20 @@
 <template>
-  <div>關於頁面</div>
+ <div>
+   about4
+   {{ $route.params.id }}
+   {{ $route.query.utm_source}}
+   {{ $route.query.utm_medium}}
+ </div>
 </template>
-
 <script>
+import {  } from 'vue'
 export default {
-  name: 'V-About'
+  name: 'app-about',
+  props: {
+    msg: String
+  },
+  setup(){
+   
+  }
 }
 </script>

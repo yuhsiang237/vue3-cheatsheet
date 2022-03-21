@@ -10,7 +10,7 @@ const router = VueRouter.createRouter({
 history: VueRouter.createWebHistory(),
 routes:[
         { path: '/', component: Home },
-        { path: '/about', component: About },
+        { path: '/about/:id', component: About },
         { path: '/:pathMatch(.*)*', component: NotFound },
     ]
 })

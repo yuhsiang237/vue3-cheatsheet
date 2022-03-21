@@ -1,35 +1,24 @@
 <template>
-  <nav>Nav</nav>
+  <div>nav</div>
   <ul>
-    <li>  <router-link to="/">Home</router-link></li>
-    <li><router-link to="/about">About</router-link></li>
+    <li>
+      <router-link to="/">Home</router-link>
+    </li>
+    <li>
+      <router-link to="/about/30">About</router-link>
+    </li>
   </ul>
- 
 </template>
-
 <script>
+import {  } from 'vue'
+
 export default {
-  name: 'v-nav'
+  name: 'app-nav',
+  props: {
+    msg: String
+  },
+  setup(){
+  
+  }
 }
 </script>
-
-<style>
-  nav{
-    text-align: center;
-  }
-  ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  }
-
-  li {
-    float: left;
-  }
-
-  li a {
-    display: block;
-    padding: 8px;
-  }
-</style>

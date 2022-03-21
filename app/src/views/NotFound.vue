@@ -1,9 +1,15 @@
 <template>
-  <div>404頁面找不到路由</div>
+<div>not found</div>
 </template>
-
 <script>
+import { } from 'vue'
 export default {
-  name: 'v-notfound'
+  name: 'app-not-found',
+  props: {
+    msg: String
+  },
+  setup(){
+  
+  }
 }
 </script>
