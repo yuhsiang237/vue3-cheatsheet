@@ -1,5 +1,11 @@
 <template>
   <div>home
+    <FloatInput
+    v-bind:value="number"
+    v-bind:fixed-digit="2"
+    @update:value="number = $event"
+  />
+  {{number}}
     a:{{a}}<br/>
     c:{{c}}<br/>
     123
@@ -14,12 +20,19 @@
 </template>
 <script>
 import { ref , reactive, computed } from 'vue'
+import FloatInput from "@/components/FloatInput.vue";
+
 export default {
   name: 'app-home',
   props: {
     msg: String
   },
+  components:{
+    FloatInput
+  },
   setup(){
+    const number = ref(100);
+
     const a = ref(100);
     const b = reactive({
       list:[
@@ -40,7 +53,8 @@ export default {
       b,
       test,
       c,
-      sum
+      sum,
+      number
     }
   }
 }
