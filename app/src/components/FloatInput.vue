@@ -2,6 +2,8 @@
   <input type="text"  class="form-control" v-bind:value="number" v-on:change="handlerChange" />
 </template>
 <script>
+   import { ref } from 'vue'
+ 
   /**
    * 元件名稱：浮點數輸入框
    * 描述：輸入的數字後面會補上固定位數小數點
@@ -12,39 +14,25 @@
       'value', //數值
       'fixedDigit' //固定小數點位數
     ],
-    data: function () {
-      return {
-        
-      };
-    },
-    setup(){
-        // 離開輸入視窗時更新
-       function handlerChange (event) {
-        this.number = parseFloat(event.target.value).toFixed(this.fixedDigit);
-        emit('update:value', this.number)
+    emits: ['update:value'],
+    setup(props,context){
+      
+      const number = ref(props.value.toFixed(props.fixedDigit));
+      // 第一次載入初始化
+      context.emit("update:value", number.value);
+      console.log("初始載入 number:", number.value);
 
-        
-        this.$emit("", );
-        console.log("離開輸入框 number:", this.number);
+      // 更新父層
+      function handlerChange () {
+        number.value = parseFloat(event.target.value).toFixed(props.fixedDigit);
+        context.emit('update:value',number.value)
+        console.log("離開輸入框 number:", number.value);
       }
+
       return{
+        number,
         handlerChange
       }
-    },
-    watch: {
-      // 監聽父元件數值變動刷新
-      value: function (newVal) {
-        this.number = newVal;
-        this.number = parseFloat(this.number).toFixed(this.fixedDigit);
-        this.$emit("update:value", this.number);
-        console.log("父層props更新 number:", this.number);
-      },
-    },
-    mounted: function () {
-      // 第一次載入初始化
-      this.number = parseFloat(this.number).toFixed(this.fixedDigit);
-      this.$emit("update:value", this.number);
-      console.log("初始載入 number:", this.number);
     }
   };
   </script>
