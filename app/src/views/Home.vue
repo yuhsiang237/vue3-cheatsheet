@@ -3,7 +3,7 @@
     <FloatInput
     v-bind:value="number"
     v-bind:fixed-digit="2"
-    @update:value="number = $event"
+    @update:value="(x) => number = x"
   />
   {{number}}
     a:{{a}}<br/>
