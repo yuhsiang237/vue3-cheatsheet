@@ -15,6 +15,9 @@
       <li>
         <router-link to="/VuexDemo">VuexDemo</router-link>
       </li>
+      <li>
+        <router-link to="/APIDemo">APIDemo</router-link>
+      </li>
     </ul>
 </div>
 </template>
