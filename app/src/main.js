@@ -5,6 +5,8 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import NotFound from './views/NotFound.vue'
 import ProviderInjectExample from './views/ProviderInjectExample.vue'
+import VuexDemo from './views/VuexDemo.vue'
+import { createStore } from 'vuex'
 
 
 // Define  routes
@@ -14,6 +16,7 @@ routes:[
         { path: '/', component: Home },
         { path: '/about/:id', component: About },
         { path: '/ProviderInjectExample', component: ProviderInjectExample },
+        { path: '/VuexDemo', component: VuexDemo },
         { path: '/:pathMatch(.*)*', component: NotFound },
     ]
 })
@@ -27,6 +30,22 @@ function updateLocation() {
 app.provide('location',readonly(location));
 app.provide('updateLocation',updateLocation);
 
+// 創建一個Vuex的store實體
+const store = createStore({
+  state: {
+    count: 1
+  },
+  mutations: {
+    increment (state,value) {
+      // 变更状态
+      state.count += value
+    }
+  }
+})
+// 套用 store
+app.use(store)
+
 // 套用router
 app.use(router)
 app.mount('#app')
+

@@ -12,6 +12,9 @@
       <li>
         <router-link to="/providerInjectExample">ProviderInjectExample</router-link>
       </li>
+      <li>
+        <router-link to="/VuexDemo">VuexDemo</router-link>
+      </li>
     </ul>
 </div>
 </template>
