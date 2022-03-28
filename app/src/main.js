@@ -6,6 +6,7 @@ import About from './views/About.vue'
 import NotFound from './views/NotFound.vue'
 import ProviderInjectExample from './views/ProviderInjectExample.vue'
 import VuexDemo from './views/VuexDemo.vue'
+import APIDemo from './views/APIDemo.vue'
 import { createStore } from 'vuex'
 
 
@@ -17,6 +18,7 @@ routes:[
         { path: '/about/:id', component: About },
         { path: '/ProviderInjectExample', component: ProviderInjectExample },
         { path: '/VuexDemo', component: VuexDemo },
+        { path: '/APIDemo', component: APIDemo },
         { path: '/:pathMatch(.*)*', component: NotFound },
     ]
 })
@@ -37,7 +39,7 @@ const store = createStore({
   },
   mutations: {
     increment (state,value) {
-      // 变更状态
+      // 變更狀態
       state.count += value
     }
   }
