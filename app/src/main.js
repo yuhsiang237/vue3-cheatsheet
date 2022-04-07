@@ -7,6 +7,7 @@ import NotFound from './views/NotFound.vue'
 import ProviderInjectExample from './views/ProviderInjectExample.vue'
 import VuexDemo from './views/VuexDemo.vue'
 import APIDemo from './views/APIDemo.vue'
+import PostGetDemo from './views/PostGetDemo'
 import { createStore } from 'vuex'
 
 
@@ -19,6 +20,7 @@ routes:[
         { path: '/ProviderInjectExample', component: ProviderInjectExample },
         { path: '/VuexDemo', component: VuexDemo },
         { path: '/APIDemo', component: APIDemo },
+        { path:'/PostGetDemo',component:PostGetDemo},
         { path: '/:pathMatch(.*)*', component: NotFound },
     ]
 })
